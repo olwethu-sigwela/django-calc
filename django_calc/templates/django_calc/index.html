@@ -1,0 +1,11 @@
+{% if latest_calc_list %}
+<table>
+<tr><th>ID</th><th>Created</th><th>X</th><th>Y</th><th>Z</th></tr>
+{% for calc in latest_calc_list %}
+<tr><td>{{calc.id}}</td><td>{{calc.created}}</td><td>{{calc.x}}</td><td>{{calc.y}}</td><td>{{calc.answer}}</td></tr>
+{% endfor %}
+</table>
+
+{% else %}
+    <p>No calculations are available.</p>
+{% endif %}

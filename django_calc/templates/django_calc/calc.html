@@ -1,0 +1,29 @@
+<form action = "{%url 'calc' %}" method="post">  
+    {% csrf_token %}
+
+    <fieldset>
+
+        <label for="x">X:</label>
+        <input type="text" id="x" name="x" value=""><br>
+        <label for="y">Y:</label>
+        <input type="text" id="y" name="y" value=""><br>
+
+        <input type="radio" id="add" name="operation" value = "add"><label for="add">Add</label><br>
+        <input type="radio" id="sub" name="operation" value = "sub"><label for="sub">Subtract</label><br>
+        <input type="radio" id="mul" name="operation" value = "mul"><label for="mul">Multiply</label><br>
+        <input type="radio" id="div" name="operation" value = "div"><label for="div">Divide</label><br>
+        <input type="radio" id="pow" name="operation" value = "pow"><label for="pow">Power</label><br>
+
+
+    </fieldset>
+
+    <input type= "submit" value = "Calculate!">
+    <div>
+    Answer:<br>
+    {% if answer %}
+    {{answer}}
+    {% endif %}
+    </div>
+
+
+</form>
